@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{compra.nome}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let l of listaItems" (click)="itemSelecionado(l)">
+          <h2>{{ l.nome }}</h2>
+          <p>Valor: {{l.valor | currency:'BRL':true:'1.2-2'}}</p>
+        </button>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div padding>
+      <button ion-button full color="primary" (click)="adicionarItens()">Adicionar</button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
